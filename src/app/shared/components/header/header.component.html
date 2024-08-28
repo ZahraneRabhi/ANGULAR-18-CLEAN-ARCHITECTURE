@@ -1,0 +1,18 @@
+<div class="bg-white shadow">
+	<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+		<a routerLink="/home" class="text-2xl font-bold text-gray-800">Clean Architecture</a>
+		<nav class="space-x-4">
+			<a
+			*ngFor="let nav of navElements" 
+			[routerLink]="nav.url"
+			class="text-gray-800 hover:text-blue-500"
+			>{{ nav.label }}</a>
+		</nav>
+		<div>
+			<button 
+			routerLink="/auth/login" 
+			class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+			>Sign In</button>
+		</div>
+	</div>
+</div>

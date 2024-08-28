@@ -1,0 +1,31 @@
+<div class="max-w-md mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+  <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center">Sign-in</h2>
+  
+  <form
+    (submit)="login()" 
+    class="space-y-4">
+    <div>
+      <label for="username" class="block text-gray-700 font-medium">Username</label>
+      <input  name="username" [(ngModel)]="credentials.username" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
+    </div>
+    
+    <div>
+      <label for="password" class="block text-gray-700 font-medium">Password</label>
+      <input name="password" type="password" id="password" [(ngModel)]="credentials.password" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
+    </div>
+
+    <div *ngIf="failedLogin" class="text-red-600">
+      Wrong credentials
+    </div>
+
+    <div>
+      <button type="submit" class="w-full px-4 py-2 bg-indigo-600 text-white font-semibold rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">Register</button>
+    </div>
+
+    <p class="text-center text-sm text-gray-500">Don't have an account?
+      <a 
+      class="text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700" 
+      routerLink="/auth/register">Register</a>
+    </p>
+  </form>
+</div>
